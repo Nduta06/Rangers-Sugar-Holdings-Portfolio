@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+:root {
+  --font-geist-sans: Arial, Helvetica, sans-serif;
+  --font-urbanist: Arial, Helvetica, sans-serif;
+  --background: #ffffff;
+  --foreground: #18181b;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-heading: var(--font-urbanist);
+  /* Brand accents sampled from the logo, used sparingly against the zinc base */
+  --color-brand-red: #d4232b;
+  --color-brand-red-dark: #a8171e;
+  --color-brand-blush: #fdf3f3;
+  --color-brand-sand: #c9a66b;
+  --color-brand-sky: #8ccbea;
+}
+
+html {
+  scroll-padding-top: 110px;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-urbanist), sans-serif;
+  letter-spacing: -0.02em;
+}
+
+:focus-visible {
+  outline: 2px solid #d4232b;
+  outline-offset: 4px;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee { animation: none; }
+}
